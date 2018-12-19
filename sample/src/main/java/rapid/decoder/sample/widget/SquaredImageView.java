@@ -1,10 +1,13 @@
 package rapid.decoder.sample.widget;
 
+import android.app.AppComponentFactory;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public class SquaredImageView extends ImageView {
+import androidx.appcompat.widget.AppCompatImageView;
+
+public class SquaredImageView extends AppCompatImageView {
     public SquaredImageView(Context context) {
         super(context);
     }

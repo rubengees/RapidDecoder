@@ -1,5 +1,1 @@
-<manifest package="rapid.decoder.builtin.jpeg">
-
-    <application />
-
-</manifest>
+<manifest package="rapid.decoder.builtin.jpeg" />

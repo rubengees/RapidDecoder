@@ -1,1 +1,1 @@
-include ':library', ':sample', ':test', ':png-decoder', ':jpeg-decoder'
+include ':library', ':sample', ':common-decoder', ':png-decoder', ':jpeg-decoder'

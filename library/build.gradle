@@ -1,26 +1,17 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 21
-        versionCode 12
-        versionName "0.3.0"
-    }
-    lintOptions {
-        abortOnError false
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 13
+        versionName "1.0.0"
     }
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
-    compile 'com.android.support:support-annotations:+'
-    //noinspection GradleDynamicVersion
-    provided 'com.android.support:support-v4:+'
+    api 'androidx.annotation:annotation:1.0.1'
+    compileOnly 'androidx.fragment:fragment:1.0.0'
 }
-
-//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
-apply from: '../gradle-mvn-push.gradle'

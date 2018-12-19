@@ -1,6 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="rapid.decoder">
-
-    <application/>
-
-</manifest>
+<manifest package="rapid.decoder" />

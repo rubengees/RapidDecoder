@@ -3,7 +3,7 @@ package rapid.decoder;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import java.lang.ref.WeakReference;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 class BackgroundTaskManager {
-    private static Boolean sHasSupportLibraryV4;
+    private static Boolean sHasFragmentLibrary;
 
     private static WeakHashMap<Object, BackgroundTask> sWeakTasks;
     private static HashMap<Object, BackgroundTask> sStrongTasks;
@@ -75,22 +75,22 @@ class BackgroundTaskManager {
     }
 
     private static boolean hasSupportLibraryV4() {
-        if (sHasSupportLibraryV4 == null) {
+        if (sHasFragmentLibrary == null) {
             try {
-                Class.forName("android.support.v4.app.Fragment");
-                sHasSupportLibraryV4 = true;
+                Class.forName("androidx.fragment.app.Fragment");
+                sHasFragmentLibrary = true;
             } catch (ClassNotFoundException e) {
-                sHasSupportLibraryV4 = false;
+                sHasFragmentLibrary = false;
             }
         }
-        return sHasSupportLibraryV4;
+        return sHasFragmentLibrary;
     }
 
     static boolean shouldBeWeak(Object o) {
         return o instanceof View ||
                 o instanceof Activity ||
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && o instanceof Fragment ||
-                hasSupportLibraryV4() && o instanceof android.support.v4.app.Fragment;
+                o instanceof Fragment ||
+                hasSupportLibraryV4() && o instanceof androidx.fragment.app.Fragment;
     }
 
     public static boolean hasAnyTasks() {
