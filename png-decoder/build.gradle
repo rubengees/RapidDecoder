@@ -6,7 +6,7 @@ android {
     defaultConfig {
         externalNativeBuild {
             cmake {
-                cppFlags "-frtti -fexceptions"
+                cppFlags "-frtti -fexceptions -fvisibility=hidden -Oz -ffunction-sections -fdata-sections"
             }
         }
     }
