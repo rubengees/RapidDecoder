@@ -6,6 +6,8 @@ file(GLOB LIBPNG src/main/libpng/*.c)
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} \
                                -Wl,--gc-sections -Wl,--exclude-libs,ALL")
 
+add_definitions(-DPNG_ARM_NEON_OPT=0)
+
 add_library(
         png-decoder
         SHARED
