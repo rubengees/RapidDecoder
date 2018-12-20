@@ -3,8 +3,7 @@ cmake_minimum_required(VERSION 3.4.1)
 file(GLOB SOURCES src/main/cpp/*.cpp)
 file(GLOB LIBPNG src/main/libpng/*.c)
 
-set(CMAKE_SHARED_LINKER_FLAGS "-Qunused-arguments -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings \
-                               -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now \
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} \
                                -Wl,--gc-sections -Wl,--exclude-libs,ALL")
 
 add_library(
