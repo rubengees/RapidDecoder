@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "rapid.decoder.sample"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+    }
+}
+
+dependencies {
+    implementation project(':library')
+    implementation project(':jpeg-decoder')
+    implementation project(':png-decoder')
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+}
