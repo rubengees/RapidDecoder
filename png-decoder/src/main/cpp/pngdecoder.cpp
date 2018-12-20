@@ -5,6 +5,7 @@
 
 #include "pngdecoder.h"
 #include "sampler.h"
+#include "libpng/pngpriv.h"
 
 #define PNGSIGSIZE 8
 
@@ -50,6 +51,10 @@ bool png_decoder::begin() {
         return JNI_FALSE;
 
     m_png = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+    m_png->flags &= ~PNG_FLAG_CRC_CRITICAL_MASK;
+    m_png->flags |= PNG_FLAG_CRC_CRITICAL_IGNORE;
+    m_png->flags &= ~PNG_FLAG_CRC_ANCILLARY_MASK;
+    m_png->flags |= PNG_FLAG_CRC_ANCILLARY_NOWARN;
     if (!m_png)
         return JNI_FALSE;
 

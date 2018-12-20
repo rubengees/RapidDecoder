@@ -4,7 +4,7 @@
 
 #include "sampler.h"
 #include "pixelcomposer.h"
-#include "../jpgd/jpgd.h"
+#include "jpgd/jpgd.h"
 
 using namespace jpgd;
 

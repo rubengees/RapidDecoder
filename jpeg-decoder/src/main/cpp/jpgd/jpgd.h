@@ -8,7 +8,7 @@
 #include <setjmp.h>
 #include <jni.h>
 
-#include "../cpp/pixelcomposer.h"
+#include "../pixelcomposer.h"
 
 #ifdef _MSC_VER
   #define JPGD_NORETURN __declspec(noreturn) 

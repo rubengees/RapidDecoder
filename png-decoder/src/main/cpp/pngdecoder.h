@@ -4,7 +4,7 @@
 #include <jni.h>
 
 #include "pixelcomposer.h"
-#include "../libpng/png.h"
+#include "libpng/png.h"
 
 namespace agu {
     class png_decoder {
