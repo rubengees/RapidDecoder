@@ -14,12 +14,13 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -36,10 +37,10 @@ import java.util.List;
 import rapid.decoder.cache.BitmapLruCache;
 import rapid.decoder.cache.DiskLruCache;
 import rapid.decoder.cache.ResourcePool;
-import rapid.decoder.compat.DisplayCompat;
 import rapid.decoder.frame.AspectRatioCalculator;
 import rapid.decoder.frame.FramedDecoder;
 import rapid.decoder.frame.FramingMethod;
+import rapid.decoder.util.DisplayUtils;
 
 import static rapid.decoder.cache.ResourcePool.POINT;
 import static rapid.decoder.cache.ResourcePool.RECT;
@@ -72,7 +73,7 @@ public abstract class BitmapDecoder extends Decodable {
         final Display display = wm.getDefaultDisplay();
 
         Point size = POINT.obtainDirty();
-        DisplayCompat.getSize(display, size);
+        DisplayUtils.getSize(display, size);
 
         final Config defaultConfig = Build.VERSION.SDK_INT < 9 ? Config.RGB_565 : Config.ARGB_8888;
         initMemoryCache((int) (factor * BitmapUtils.getByteCount(size.x, size.y, defaultConfig)));

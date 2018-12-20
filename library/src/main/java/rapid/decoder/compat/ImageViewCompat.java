@@ -3,12 +3,15 @@ package rapid.decoder.compat;
 import android.os.Build;
 import android.widget.ImageView;
 
+import androidx.annotation.RestrictTo;
+
 import java.lang.reflect.Field;
 
+@RestrictTo(RestrictTo.Scope.LIBRARY)
 public final class ImageViewCompat {
     private static Field sFieldMaxWidth;
     private static Field sFieldMaxHeight;
-    
+
     public static int getMaxWidth(ImageView v) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             return v.getMaxWidth();
