@@ -15,3 +15,7 @@ dependencies {
     api 'androidx.annotation:annotation:1.0.1'
     compileOnly 'androidx.fragment:fragment:1.0.0'
 }
+
+afterEvaluate {
+    generateReleaseBuildConfig.enabled = false
+}

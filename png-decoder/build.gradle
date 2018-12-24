@@ -4,6 +4,11 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions -fvisibility=hidden -Oz -ffunction-sections -fdata-sections"
@@ -16,4 +21,8 @@ android {
             path "CMakeLists.txt"
         }
     }
+}
+
+afterEvaluate {
+    generateReleaseBuildConfig.enabled = false
 }
